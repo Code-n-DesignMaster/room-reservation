@@ -1,0 +1,388 @@
+header {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 90px;
+  padding: 20px;
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.room, .days, .day{
+  display: flex;
+}
+
+.rooms li, .navContainer li{
+  list-style: none;
+}
+
+.rooms {
+  color: #424242;
+  max-width: 100%;
+}
+
+.days {
+  margin: 0;
+  padding: 0;
+}
+
+.day {
+  flex-wrap: wrap;
+  max-width: 170px;
+  padding: 0;
+  text-align: end;
+  justify-content: center;
+}
+
+.time{
+  padding: 1px 10px;
+  cursor: pointer;
+  width: 40px;
+}
+
+.room {
+  margin: 5px 20px;
+  padding: 5px 0;
+  min-width: 860px;
+}
+
+.rooms, .navContainer{
+  width: 900px;
+}
+
+.time {
+  background: rgba(224, 224, 224, 0.48);
+}
+
+.dayHeader {
+  padding-left: 10px;
+  width: 100%;
+}
+
+.redRoom .dayHeader, .blueRoom .dayHeader, .purpleRoom .dayHeader, .greenRoom .dayHeader {
+  display: none;
+}
+
+.roomInfo{
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.roomColumnHeader{
+  width: 150px;
+  padding-left: 20px;
+  position: relative;
+  left: 10px;
+  font-weight: 700;
+  color: #424242;
+}
+
+.navContainer {
+  margin: 20px 0;
+}
+
+.roomColumnHeader, .controlBtns{
+  display: inline-block;
+}
+
+
+
+.controlBtns {
+  width: 690px;
+  text-align: center;
+  position: relative;
+  background: #eeeeee;
+  padding: 10px 0;
+  margin-left: 20px;
+}
+.controlBtns button {
+  position: absolute;
+  height: 18px;
+  width: 30px;
+  border: none;
+  background-position: center !important;
+  background-size: cover !important;
+  cursor: pointer;
+}
+
+.controlBtns button:first-child {
+  transform: rotate(180deg);
+  left: 10px;
+  background: url("https://png.icons8.com/windows/1600/long-arrow-right.png");
+}
+.controlBtns button:last-child {
+  right: 10px;
+  background: url("https://png.icons8.com/windows/1600/long-arrow-right.png");
+}
+
+.greenRoom {
+  background: #a5d6a7;
+}
+
+.greenRoom .time{
+  background: #c8e6c9;
+}
+
+.redRoom {
+  background: #ef9a9a ;
+}
+
+.redRoom .time {
+  background: #ffcdd2;
+}
+
+.blueRoom {
+  background: #90caf9;
+}
+
+.blueRoom .time {
+  background: #bbdefb;
+}
+
+.purpleRoom {
+  background: #ce93d8;
+}
+
+.purpleRoom .time {
+  background: #e1bee7;
+}
+
+.greenRoom .reserved {
+  background: #4caf50;
+}
+
+.redRoom .reserved {
+  background: #f44336;
+}
+
+.blueRoom .reserved {
+  background: #2196f3;
+}
+
+.purpleRoom .reserved {
+  background: #ba68c8;
+  /*color: #fafafa;*/
+}
+
+.dates {
+  padding-left: 180px;
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+}
+
+.roomName {
+  font-weight: 700;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.room {
+  display: block;
+}
+
+.room > div {
+  display: inline-block;
+}
+
+.days {
+  display: inline-block;
+  width: 700px;
+}
+
+.days > li {
+  display: inline-block;
+}
+
+.day {
+  max-width: 120px;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.time {
+  display: inline-block;
+}
+
+.roomInfo {
+  /*margin-top: -18px;*/
+  position: relative;
+  top: -30px;
+}
+
+.navContainer {
+  width: auto;
+  max-width: 900px;
+}
+
+.popover__title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 36px;
+  text-decoration: none;
+  color: rgb(228, 68, 68);
+  text-align: center;
+  padding: 15px 0;
+}
+
+.popover__wrapper {
+  position: absolute;
+  margin-left: 6px;
+  margin-top: -84px;
+  display: inline-block;
+}
+.popover__content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: -150px;
+  transform: translate(0,10px);
+  background-color: #fafafa;
+  padding: 24px 40px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  width: 268px;
+  height: 21px;
+  max-height: 21px;
+}
+.popover__content:before {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  right: calc(50% - 10px);
+  bottom: -8px;
+  transform: rotate(180deg);
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #fafafa transparent;
+}
+/*.popover__wrapper:hover .popover__content {*/
+  /*z-index: 10;*/
+  /*opacity: 1;*/
+  /*visibility: visible;*/
+  /*transform: translate(0,-20px);*/
+  /*transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);*/
+/*}*/
+ .popover__content {
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+   position: absolute;
+}
+.popover__message {
+  text-align: center;
+}
+
+.popover__content .close {
+  position: absolute;
+  right: 7px;
+  top: 5px;
+  background: url("https://cdn3.iconfinder.com/data/icons/status/100/close_2-512.png");
+  height: 13px;
+  width: 13px;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.popover__content .reserveBtn {
+  background: #4285f4;
+  border: none;
+  color: #fff;
+  height: 100%;
+}
+
+.popover__content .note {
+  overflow: hidden;
+}
+
+.noteInput {
+  width: 220px;
+  padding-left: 5px
+}
+
+.day {
+  max-width: 129px;
+  margin: 0 5px;
+}
+
+.time {
+  width: 56px;
+  padding: 1px 0 1px 6px;
+}
+
+.time span {
+  cursor: default;
+}
+
+.time span:after {
+  content: " ";
+  padding-right: 6px;
+  display: inline-block;
+  min-width: 5.328px;
+}
+
+.reserved span:after {
+  cursor: pointer;
+  content: "-";
+  padding-right: 6px;
+}
+
+@media screen and (max-width: 900px){
+  .roomColumnHeader {
+    display: none;
+  }
+  .dates {
+    display: none;
+  }
+  .rooms {
+    overflow-x: auto;
+  }
+  .controlBtns {
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    margin-left: 0;
+  }
+  .room {
+    margin: 5px 0;
+  }
+  .redRoom .dayHeader, .blueRoom .dayHeader, .purpleRoom .dayHeader, .greenRoom .dayHeader{
+    display: block;
+  }
+  .dayHeader{
+    padding:5px 0;
+    text-align: center;
+  }
+  .popover__wrapper{
+    position: fixed;
+    top: 100% !important;
+    left: 144px !important;
+    width: calc(100% - 80px);
+  }
+  .popover__content{
+    width: 100%;
+  }
+
+  .noteInput {
+    width: calc(100% - 40px);
+  }
+}
+
+.hidden {
+  display: none;
+}
